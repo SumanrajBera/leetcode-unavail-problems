@@ -45,7 +45,7 @@ class LL {
             this.insertAtFirst(val)
             return
         }
-        
+
         this.size++;
         let temp = this.head;
         const newNode = new Node(val)
@@ -84,6 +84,31 @@ class LL {
         this.printLL()
     }
 
+    deleteAtPos(pos) {
+        if (pos <= 0 || pos > this.size) {
+            console.log("Can't delete beyond the size of linked list")
+            return
+        }
+
+        if (this.size === 1) {
+            this.head = null;
+            return
+        }
+
+        if (pos === 1) {
+            this.deleteAtFirst()
+            return
+        }
+
+        let temp = this.head;
+        for (let i = 1; i < pos - 1; i++) {
+            temp = temp.next;
+        }
+        let nextNode = temp.next.next;
+        temp.next = nextNode
+        this.printLL()
+    }
+
     printLL() {
         let temp = this.head;
 
@@ -119,3 +144,5 @@ newLL.deleteAtLast()
 newLL.deleteAtLast()
 newLL.deleteAtLast()
 newLL.deleteAtLast()
+newLL.deleteAtPos(2)
+newLL.deleteAtPos(1)
