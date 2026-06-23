@@ -3,3 +3,4 @@
 - [Linked List - create, add and delete](./linkedList.js)
 - [Design a circular queue](./circularQueue.js)
 - [Double ended queue - Deque](./deque.js)
+- [Counting Sort](./countingSort.js)
